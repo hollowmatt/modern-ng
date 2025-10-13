@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Login Page</h2>
+  <form>
+    <input 
+      type="text" 
+      placeholder="email" 
+      name="email"
+      [(ngModel)]="credentials.email" />
+    <input 
+      type="password"
+      placeholder="Password" 
+      name="password"
+      [(ngModel)]="credentials.password" />
+    <button type="submit" (click)="login()">Login</button>
+  </form>
+  @if (!credentials.email || !credentials.password) {
+    <p class="error">Missing details</p>
+  }
+</div>
