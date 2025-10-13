@@ -6,4 +6,7 @@ export const routes: Routes = [
   { path: 'register', loadComponent: () => {
     return import('./pages/registration').then((m) => m.RegistrationComponent);
   }},
+  { path: 'employee', loadChildren: () => {
+    return import('./pages/employees/employees.routes').then((m) => m.routes);
+  }}
 ];
