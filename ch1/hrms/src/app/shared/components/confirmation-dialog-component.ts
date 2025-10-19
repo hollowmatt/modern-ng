@@ -8,7 +8,7 @@ import { Component, Input } from "@angular/core";
         Are you sure you want to perform this action?
 
         <button (click)="isConfirmationOpen = false">Cancel</button>
-        <button (click)="isConfirmationOpen = false">Confirm</button>
+        <button (click)="isConfirmationOpen = false" class="delete-button">Confirm</button>
       </div>
     </dialog>
   `,
