@@ -69,3 +69,12 @@ button {
 .read-the-docs {
   color: #888;
 }
+
+.employee-detail {
+  text-align: left;
+  margin: 2em auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-width: 400px;
+}

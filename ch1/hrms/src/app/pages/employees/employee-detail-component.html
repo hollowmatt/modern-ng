@@ -1,1 +1,9 @@
-<h1> Detail component {{employee.id}}</h1>
+<h1> Detail component</h1>
+<p class="employee-detail">
+  Employee Name: {{ employee.firstName }} {{ employee.lastName }} <br />
+  Position: {{ employee.position }} <br />
+  Age: {{ employee.age }}
+</p>
+<p>
+  <a routerLink="/employees/list">Back to Employee List</a>
+</p>

@@ -1,8 +1,8 @@
 import { AsyncPipe, NgComponentOutlet } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
-
+import { Employee } from '../../types/employee';
 @Component({
   selector: 'app-employee-detail-component',
   imports: [RouterModule],
@@ -10,18 +10,14 @@ import { EmployeeService } from '../../services/employee.service';
   standalone: true,
 })
 export class EmployeeDetailComponent {
-  employee = {
-    id:0,
-    firstName:'',
-    lastName:'',
-    position:'',
-    age:0
-  }
+  @Input() employee!: Employee;
+  
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {}
   ngOnInit(): void {
+    
     this.route.params.subscribe(params => {
-      this.employee.id = params['id'];
-      this.employeeService.getEmployeeById(+this.employee.id);
-    })
+      this.employee = this.employeeService.getEmployeeById(parseInt(params['id']))!;
+      console.log(this.employee);
+    });
   }
 }

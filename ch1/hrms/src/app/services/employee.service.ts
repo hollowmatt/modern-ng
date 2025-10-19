@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-
-const employees = [
+import { Employee } from "../types/employee";
+const employees: Employee[] = [
   { id: 1, firstName: 'John', lastName: 'Doe', position: 'Farmer', age: 40 }, 
   { id: 2, firstName: 'Jane', lastName: 'Smith', position: 'Engineer', age: 25 }
 ];
