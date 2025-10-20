@@ -1,6 +1,5 @@
-import { AsyncPipe, NgComponentOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { Employee } from '../../types/employee';
 @Component({

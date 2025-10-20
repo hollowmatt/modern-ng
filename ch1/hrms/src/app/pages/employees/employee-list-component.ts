@@ -19,4 +19,7 @@ export class EmployeeListComponent {
     this.confirmDialog = await import('../../shared/components/confirmation-dialog-component').then(m => m.ConfirmationDialogComponent);
     this.isConfirmationOpen = true;
   }
+  async hideConfirmationDialog(){
+    this.isConfirmationOpen = false;
+  }
 }
