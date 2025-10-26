@@ -78,3 +78,53 @@ button {
   border-radius: 4px;
   max-width: 400px;
 }
+
+.submit-form {
+  max-width: 400px;
+  margin: auto;
+  border: #34495e 1px solid;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 0.5rem;
+}

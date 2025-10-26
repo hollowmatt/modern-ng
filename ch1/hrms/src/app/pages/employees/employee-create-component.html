@@ -1,0 +1,73 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          required
+          [formControl]="form.controls.email"
+          name="email"/>
+      </div>
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="description"
+          class="form-control"
+          required
+          [formControl]="form.controls.firstName"
+          name="firstName"/>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="description"
+          class="form-control"
+          required
+          [formControl]="form.controls.lastName"
+          name="lastName"/>
+      </div>
+
+      <div class="form-group">
+        <label for="position">Position</label>
+        <select
+          id="position"
+          class="form-control"
+          required
+          [formControl]="form.controls.position"
+          name="position">
+          <option value="" disabled selected>Select position</option>
+          <option value="Developer">Developer</option>
+          <option value="Manager">Manager</option>
+          <option value="HR">HR</option>
+          <option value="Director">Director</option>
+          <option value="VP">VP</option>
+          <option value="C-Level">C-Level</option>
+          <option value="Intern">Intern</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          class="form-control"
+          required
+          [formControl]="form.controls.age"
+          name="age"/>
+      </div>
+
+      <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+    } @else {
+      <h4>Employee has been saved successfully</h4>
+      <button class="btn btn-success" (click)="newEmployee()">Add</button>
+    }
+  </div>
+</div>
