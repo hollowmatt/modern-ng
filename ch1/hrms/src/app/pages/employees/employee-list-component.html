@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    @for (employee of employees$; track employee.email){
+    @for (employee of employees$ | async; track employee.email){
       <tr>
         <td>{{ employee.firstName }} {{ employee.lastName }}</td>
         <td>{{ employee.position }}</td>

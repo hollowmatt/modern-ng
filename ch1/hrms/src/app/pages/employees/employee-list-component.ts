@@ -1,11 +1,11 @@
-import { NgComponentOutlet } from '@angular/common';
+import { NgComponentOutlet, AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list-component',
-  imports: [NgComponentOutlet, RouterModule],
+  imports: [NgComponentOutlet, RouterModule, AsyncPipe],
   templateUrl: './employee-list-component.html',
   standalone: true,
 })

@@ -9,14 +9,18 @@ import { Employee } from '../../types/employee';
   standalone: true,
 })
 export class EmployeeDetailComponent {
-  @Input() employee!: Employee;
+  @Input() employee: Employee = {
+    email: '', firstName: '', lastName: '', position: '', age: 0
+  };
   
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {}
   ngOnInit(): void {
     
     this.route.params.subscribe(params => {
-      this.employee = this.employeeService.getEmployeeByEmail(params['email'])!;
-      console.log(this.employee);
+      this.employeeService.getEmployeeByEmail(params['email']).subscribe(employees => {
+        this.employee = employees[0];
+        console.log(this.employee);
+      });
     });
   }
 }

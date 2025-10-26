@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Employee } from "../types/employee";
-import axios from "axios";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const employees: Employee[] = [
   { email: "john@doe.com", firstName: 'John', lastName: 'Doe', position: 'Farmer', age: 40 }, 
@@ -8,15 +9,38 @@ const employees: Employee[] = [
 ];
 @Injectable()
 export class EmployeeService {
+  constructor(private http: HttpClient) {}
   // Employee service logic here
-  private baseUrl = 'http://api.example.com/employees';
-  getEmployees() {
+  private baseUrl = 'http://localhost:3000/api/employees';
+
+  getEmployees(): Observable<Employee[]> {
     // Return an observable or promise with employee data
-    return employees
+    return this.http.get<Employee[]>(this.baseUrl);
     // return axios.get(this.baseUrl);
   }
-  getEmployeeByEmail(email: string) {
+  getEmployeeByEmail(email: string): Observable<Employee[]> {
     // Return an observable or promise with employee data by id
-    return  employees.find(emp => emp.email === email);
+    return  this.http.get<Employee[]>(`${this.baseUrl}?email=${email}`);
+  }
+
+  createEmployee(employee: Employee): Observable<any> {
+    // Logic to create a new employee
+    return this.http.post(this.baseUrl, employee);
+  }
+
+  getEmployee(id: any): Observable<Employee> {
+    return this.http.get<Employee>(`${this.baseUrl}/${id}`);
+  }
+
+  updateEmployee(id: any, employee: Employee): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, employee);
+  }
+
+  deleteEmployee(id: any): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);    
+  }
+
+  deleteAll(): Observable<any> {
+    return this.http.delete(this.baseUrl);
   }
 }
