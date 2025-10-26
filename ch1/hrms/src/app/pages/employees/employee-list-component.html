@@ -8,13 +8,13 @@
     </tr>
   </thead>
   <tbody>
-    @for (employee of employees$; track employee.id){
+    @for (employee of employees$; track employee.email){
       <tr>
         <td>{{ employee.firstName }} {{ employee.lastName }}</td>
         <td>{{ employee.position }}</td>
         <td>
           <button (click)="showConfirmationDialog()" class="delete-button">Delete</button>
-          <button [routerLink]="['/employees/detail', employee.id]">View Details</button>
+          <button [routerLink]="['/employees/detail', employee.email]">View Details</button>
         </td>
       </tr>
     } @empty {

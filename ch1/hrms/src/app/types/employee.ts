@@ -1,5 +1,5 @@
 export type Employee = {
-  id: number;
+  email: String;
   firstName: string;
   lastName: string;
   position: string;

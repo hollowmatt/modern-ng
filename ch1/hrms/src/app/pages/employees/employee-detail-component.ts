@@ -15,7 +15,7 @@ export class EmployeeDetailComponent {
   ngOnInit(): void {
     
     this.route.params.subscribe(params => {
-      this.employee = this.employeeService.getEmployeeById(parseInt(params['id']))!;
+      this.employee = this.employeeService.getEmployeeByEmail(params['email'])!;
       console.log(this.employee);
     });
   }
