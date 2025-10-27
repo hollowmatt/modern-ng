@@ -16,6 +16,7 @@ export class LoginComponent {
     constructor(private authService: AuthService) {}
 
     login() {
+        console.log('Logging in with', this.credentials);
         if (this.credentials.email && this.credentials.password) {
             this.authService.login(this.credentials).subscribe();
         }
