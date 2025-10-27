@@ -3,10 +3,7 @@ import { Employee } from "../types/employee";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const employees: Employee[] = [
-  { email: "john@doe.com", firstName: 'John', lastName: 'Doe', position: 'Farmer', age: 40 }, 
-  { email: "jane@smith.com", firstName: 'Jane', lastName: 'Smith', position: 'Engineer', age: 25 }
-];
+
 @Injectable()
 export class EmployeeService {
   constructor(private http: HttpClient) {}
