@@ -34,6 +34,7 @@ export class EmployeeCreateComponent {
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.newEmployee()
           this.submitted = true;
         },
         error: (e) => console.error(e)
@@ -41,9 +42,10 @@ export class EmployeeCreateComponent {
   }
 
   newEmployee(): void {
-    this.submitted = false;
     this.employee = {
       email: '', firstName: '', lastName: '', position: '', age: 0
     };
+    this.submitted = false;
+    this.form.reset();
   }
 }
