@@ -4,10 +4,14 @@ import { EmployeeService } from './services/employee.service';
 import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'register', loadComponent: () => {
-    return import('./pages/registration').then((m) => m.RegistrationComponent);
-  }},
+  { 
+    path: 'register', 
+    loadComponent: () => {
+      return import('./pages/registration').then((m) => m.RegistrationComponent);
+    }
+  },
   { 
     path: 'employees',
     providers: [EmployeeService],
